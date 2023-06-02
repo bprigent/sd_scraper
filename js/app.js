@@ -3,7 +3,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 // Import urls from urls.js
-const domains = require('./urls.js');
+const domains = require('../urls-list.js');
 console.log(domains);
 
 let count = 0;

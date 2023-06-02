@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const domains = require('./urls.js');
+const domains = require('../urls-list.js');
 
 async function scrapeSitemap(domains) {
     let pages = [];
