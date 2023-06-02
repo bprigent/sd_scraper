@@ -35,5 +35,3 @@ urls.forEach((url, i) => {
             console.error(`Failed to fetch or parse ${url}. Error: ${error.message}`);
         });
 });
-
-// After all URLs processed, you can handle the "types" object as needed.
