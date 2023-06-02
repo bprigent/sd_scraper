@@ -3,15 +3,15 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
 // Import urls from urls.js
-const urls = require('./urls.js');
-console.log(urls);
+const domains = require('./urls.js');
+console.log(domains);
 
 let count = 0;
 let types = {};
 console.log(types);
 
 
-urls.forEach((url, i) => {
+domains.forEach((url, i) => {
     axios.get(url)
         .then(response => {
             const dom = new JSDOM(response.data);
@@ -33,7 +33,7 @@ urls.forEach((url, i) => {
             }
 
             // Log progress
-            console.log(`Processed ${i + 1} of ${urls.length} URLs. Current count: ${count}, ${(count/urls.length * 100)}%`);
+            console.log(`Processed ${i + 1} of ${domains.length} URLs. Current count: ${count}, ${(count/domains.length * 100)}%`);
             console.log(types)
         })
         .catch(error => {
