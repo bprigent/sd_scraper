@@ -4,8 +4,12 @@ const { JSDOM } = jsdom;
 
 // Import urls from urls.js
 const urls = require('./urls.js');
+console.log(urls);
 
+let count = 0;
 let types = {};
+console.log(types);
+
 
 urls.forEach((url, i) => {
     axios.get(url)
@@ -29,7 +33,8 @@ urls.forEach((url, i) => {
             }
 
             // Log progress
-            console.log(`Processed ${i + 1} of ${urls.length} URLs. Current count: ${count}`);
+            console.log(`Processed ${i + 1} of ${urls.length} URLs. Current count: ${count}, ${(count/urls.length * 100)}%`);
+            console.log(types)
         })
         .catch(error => {
             console.error(`Failed to fetch or parse ${url}. Error: ${error.message}`);
